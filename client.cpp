@@ -14,7 +14,7 @@
 #define DEST_IP_ADDRESS "127.0.0.1"
 
 
-/*客户端的处理过程*/
+/*Server side*/
 void process_info(int s, char *a[], int count)
 {
   float function = 0;
@@ -81,7 +81,7 @@ int main(int argc,char *argv[])
     a[count] = argv[count];
   }
   //--reused from this link: http://blog.csdn.net/tigerjibo/article/details/6775534
-  struct sockaddr_in addr_serv;//服务器端地址
+  struct sockaddr_in addr_serv;//server address
   sock_fd = socket(AF_INET,SOCK_STREAM,0);
   if(sock_fd < 0){
     perror("sock");
