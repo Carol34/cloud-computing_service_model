@@ -1,0 +1,47 @@
+--a. 	Name: Fangyuan Zhang
+	Session: 3
+	USC ID: 4532609302
+
+--b.Work Have Done----------------------------------------
+In this socket project, I have successfully made transmissions between different hosts using TCP and UDP, which is a simple model of AWS.
+First, a client host send a number and operation function to the AWS server using TCP. Then the AWS assigns the work to three servers, each of which does a small part of the entire calculation. These transmissions are based on UDP. At last, the result are sent back to the client.
+
+
+--c.Code Files Introduction-------------------------------
+1. client.cpp
+The client's source file. Collect inputs and send values and functions to AWS server using TCP.
+
+2. aws.cpp
+The AWS server's source file. Receive values and functions from client, send values to other servers using UDP, conduct the summations and subtractions, send the results back to client using TCP.
+
+3. serverA.cpp
+The server A's source file. Receive values from AWS server using UDP,  calculate the square of its received numbers, and send the results back to AWS server.
+
+4. serverB.cpp
+The server B's source file. Receive values from AWS server using UDP, and calculate the cube of its received numbers, and send the results back to AWS server.
+
+5. serverC.cpp
+The server C's source file. Receive values from AWS server using UDP, and calculate the 5th power of its received numbers, and send the results back to AWS server.
+
+6. Makefile
+Compile and link the source files, and run the execuatable files.
+
+
+--d. Format of Message Exchange---------------------------
+1. The original input was collected in client.cpp, with string format(function name and the value). 
+2. Then the strings are transformed into float format(function-DIV = float(1); function-LOG = float(2); value = float(value)).
+3. Two inputs are put into a float array and transmit from client to AWS server.
+4. Among AWS server and server A, B and C, only the value is transmitted.
+5. After all the calulation, the AWS server will send the result back to the client in the format of float number using TCP.
+
+
+--e. Idiosyncrasy-----------------------------------------
+No idiosyncrasy is detected from the program. All errors during the tests are solved properly.
+
+
+--f. Code reusing-----------------------------------------
+1. Some codes associated with TCP transmission are reused from this link:
+http://blog.csdn.net/tigerjibo/article/details/6775534
+2. Beej's Guide to C Programming and Network Programming(socket programming) is also used as a reference.
+http://www.beej.us/guide/bgnet/ 
+
