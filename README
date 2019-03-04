@@ -1,6 +1,4 @@
 --a. 	Name: Fangyuan Zhang
-	Session: 3
-	USC ID: 4532609302
 
 --b.Work Have Done----------------------------------------
 In this socket project, I have successfully made transmissions between different hosts using TCP and UDP, which is a simple model of AWS.
